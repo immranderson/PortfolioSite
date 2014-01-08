@@ -1,0 +1,32 @@
+application: immranderson
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  
+- url: /dart/
+  static_dir: dart
+
+- url: /images/
+  static_dir: images
+  
+- url: /css/
+  static_dir: css
+  
+- url: /files/
+  static_dir: files
+  
+- url: /js/
+  static_dir: js
+  
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
